@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Property Marketplace — TariAds (Flagship)</title>
+  <meta name="description" content="Search verified houses for rent, apartments, student living, and commercial properties. Connect directly with verified landlords, agencies, and sellers.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-box">T</div>
+        <div class="brand-text">
+          <span class="brand-title">TARIADS</span>
+        </div>
+      </a>
+
+      <!-- Ecosystem Mode Switch: Marketplace ↔ Billboard -->
+      <div class="ecosystem-mode-switch" role="tablist" aria-label="TariAds Experience Mode">
+        <a href="index.html" class="mode-btn active" id="modeMarketplace" role="tab" aria-selected="true" title="TariAds Marketplace — Discover and List">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Marketplace</span>
+        </a>
+        <a href="https://billboard.usetariads.com" class="mode-btn" id="modeBillboard" role="tab" aria-selected="false" title="TariAds Billboard — Digital Advertising & Campaigns">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="3" rx="2"/>
+            <line x1="8" x2="16" y1="21" y2="21"/>
+            <line x1="12" x2="12" y1="17" y2="21"/>
+          </svg>
+          <span>Billboard</span>
+        </a>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="saved.html" class="saved-btn" title="Saved Listings">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="saved-label">Saved</span>
+          <span class="badge-count saved-count-display" style="display:none;">0</span>
+        </a>
+
+        <a href="post-listing.html?type=property" class="btn btn-primary btn-sm header-post-btn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="post-btn-text">Post Property</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobileNavDrawer">
+    <div class="drawer-mode-switch-container">
+      <div class="drawer-mode-label">TARIADS EXPERIENCE</div>
+      <div class="ecosystem-mode-switch mobile-drawer-switch">
+        <a href="index.html" class="mode-btn active">Marketplace</a>
+        <a href="https://billboard.usetariads.com" class="mode-btn">Billboard ↗</a>
+      </div>
+    </div>
+    <div class="drawer-links-group">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="properties.html" class="nav-link active">Property</a>
+      <a href="vehicles.html" class="nav-link">Vehicles</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="categories.html" class="nav-link">All Categories</a>
+      <a href="saved.html" class="nav-link">Saved Items</a>
+      <a href="about.html" class="nav-link">About & Safety</a>
+    </div>
+    <div class="drawer-footer-action">
+      <a href="post-listing.html?type=property" class="btn btn-primary" style="width:100%; text-align:center;">+ Post a Property</a>
+    </div>
+  </div>
+
+  <!-- Search Header Bar -->
+  <div style="background-color:#FFFFFF; border-bottom:1px solid #E2E8F0; padding:1.25rem 0;">
+    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:1rem; flex-wrap:wrap;">
+      <div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <h1 style="font-size:1.5rem; font-weight:800; color:#0F172A; line-height:1.2;">Property Marketplace</h1>
+        </div>
+        <p style="font-size:0.875rem; color:#64748B;">Verified residences, apartments, and commercial spaces with direct contacts.</p>
+      </div>
+      <button class="btn btn-secondary btn-sm" id="toggleMobileFilter" style="display:none;">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+        Filters
+      </button>
+    </div>
+  </div>
+
+  <!-- Main Search & Results Section -->
+  <div class="container properties-page-layout">
+    
+    <!-- Sidebar Filter -->
+    <aside class="filter-sidebar" id="filterSidebar">
+      <div class="filter-header">
+        <div class="filter-title">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#075E34" stroke-width="2"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"/></svg>
+          <span>Filters</span>
+        </div>
+        <button class="filter-reset-btn" id="filterResetBtn">Reset All</button>
+      </div>
+
+      <!-- Keyword Search -->
+      <div class="filter-group">
+        <label class="filter-group-label" for="filterSearchInput">Search Keyword</label>
+        <div class="field-input-wrapper">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          <input type="text" id="filterSearchInput" placeholder="Area, Road, or ID..." />
+        </div>
+      </div>
+
+      <!-- Country Filter -->
+      <div class="filter-group">
+        <label class="filter-group-label" for="filterCountry">Market / Country</label>
+        <select class="form-select" id="filterCountry">
+          <option value="ALL">All Markets (Global)</option>
+          <option value="ZW">Zimbabwe (Launch Market)</option>
+          <option value="ZA">South Africa</option>
+          <option value="UK">United Kingdom</option>
+          <option value="BW">Botswana</option>
+          <option value="ZM">Zambia</option>
+          <option value="US">United States</option>
+          <option value="KE">Kenya</option>
+        </select>
+      </div>
+
+      <!-- Verified Only Toggle -->
+      <div class="filter-group" style="background:#F0FDF4; padding:0.85rem; border-radius:8px; border:1px solid #A8DAB5;">
+        <label class="checkbox-label" style="font-weight:700; color:#075E34;">
+          <input type="checkbox" id="filterVerifiedOnly" />
+          <span>Verified Properties Only</span>
+        </label>
+        <p style="font-size:0.75rem; color:#065F46; margin-top:0.25rem; margin-left:1.5rem;">
+          Confirmed address, photos, and direct lister identity
+        </p>
+      </div>
+
+      <!-- Category / Listing Type -->
+      <div class="filter-group">
+        <label class="filter-group-label" for="filterCategory">Listing Category</label>
+        <select class="form-select" id="filterCategory">
+          <option value="all">All Property Categories</option>
+          <option value="rent">Houses & Flats for Rent</option>
+          <option value="sale">Houses & Stands for Sale</option>
+          <option value="student">Student Accommodation</option>
+          <option value="rooms">Rooms & Cottages</option>
+          <option value="commercial">Commercial Property</option>
+          <option value="holiday">Holiday / Short-Stay</option>
+          <option value="land">Land & Stands</option>
+        </select>
+      </div>
+
+      <!-- Property Type -->
+      <div class="filter-group">
+        <label class="filter-group-label" for="filterPropertyType">Property Type</label>
+        <select class="form-select" id="filterPropertyType">
+          <option value="">Any Property Type</option>
+          <option value="House">House</option>
+          <option value="Apartment">Apartment / Flat</option>
+          <option value="Commercial">Commercial Office / Retail</option>
+          <option value="Room">Room / Cottage</option>
+          <option value="Stand">Land / Stand</option>
+        </select>
+      </div>
+
+      <!-- Location / City -->
+      <div class="filter-group">
+        <label class="filter-group-label" for="filterLocation">City / Town</label>
+        <select class="form-select" id="filterLocation">
+          <option value="">All Cities</option>
+          <option value="Harare">Harare</option>
+          <option value="Bulawayo">Bulawayo</option>
+          <option value="Cape Town">Cape Town</option>
+          <option value="Johannesburg">Johannesburg</option>
+          <option value="London">London</option>
+          <option value="Gaborone">Gaborone</option>
+          <option value="Lusaka">Lusaka</option>
+          <option value="Nairobi">Nairobi</option>
+          <option value="Mutare">Mutare</option>
+          <option value="Victoria Falls">Victoria Falls</option>
+        </select>
+      </div>
+
+      <!-- Price Range -->
+      <div class="filter-group">
+        <label class="filter-group-label">Price Range (USD)</label>
+        <div class="range-inputs">
+          <input type="number" class="range-input-box" id="filterMinPrice" placeholder="Min $" min="0" />
+          <input type="number" class="range-input-box" id="filterMaxPrice" placeholder="Max $" min="0" />
+        </div>
+      </div>
+
+      <!-- Bedrooms -->
+      <div class="filter-group">
+        <label class="filter-group-label">Bedrooms</label>
+        <div style="display:flex; gap:0.35rem; flex-wrap:wrap;">
+          <button type="button" class="chip-link bed-filter-btn active" data-beds="any">Any</button>
+          <button type="button" class="chip-link bed-filter-btn" data-beds="1">1+</button>
+          <button type="button" class="chip-link bed-filter-btn" data-beds="2">2+</button>
+          <button type="button" class="chip-link bed-filter-btn" data-beds="3">3+</button>
+          <button type="button" class="chip-link bed-filter-btn" data-beds="4">4+</button>
+        </div>
+      </div>
+
+      <!-- Key Utility Features -->
+      <div class="filter-group">
+        <label class="filter-group-label">Key Property Features</label>
+        <div class="checkbox-list">
+          <label class="checkbox-label">
+            <input type="checkbox" id="filterSolar" />
+            <span>⚡ Solar Power Backup</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="filterBorehole" />
+            <span>💧 Borehole / Backup Water</span>
+          </label>
+          <label class="checkbox-label">
+            <input type="checkbox" id="filterWalled" />
+            <span>🛡️ Perimeter Wall & Gate</span>
+          </label>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Main Results Grid Area -->
+    <main class="properties-main-content">
+      
+      <!-- Top Sort & Results Counter -->
+      <div class="properties-top-bar">
+        <div class="results-count">
+          Showing <strong id="resultCountNumber">0</strong> properties available
+        </div>
+        <div class="sort-select-wrapper">
+          <label for="filterSortBy" style="font-size:0.875rem; color:#64748B; font-weight:600;">Sort By:</label>
+          <select id="filterSortBy" class="sort-select">
+            <option value="recommended">Recommended & Verified</option>
+            <option value="newest">Newly Listed</option>
+            <option value="price-low">Price: Low to High</option>
+            <option value="price-high">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Results Grid -->
+      <div class="property-grid" id="propertiesResultGrid">
+        <!-- Dynamically injected by properties.js -->
+      </div>
+    </main>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="brand-icon-box">T</div>
+            <div class="brand-text">
+              <span class="brand-title">TARIADS</span>
+              <span class="brand-subtitle">GLOBAL MARKETPLACE</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your marketplace to see more, find more, and grow more.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Property</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?category=rent">Houses for Rent</a></li>
+            <li><a href="properties.html?category=rent&type=Apartment">Apartments & Flats</a></li>
+            <li><a href="properties.html?category=rooms">Rooms & Cottages</a></li>
+            <li><a href="properties.html?category=student">Student Accommodation</a></li>
+            <li><a href="properties.html?category=sale">Houses for Sale</a></li>
+            <li><a href="properties.html?category=commercial">Commercial Property</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Other Categories</h4>
+          <ul class="footer-links">
+            <li><a href="vehicles.html">Vehicles & Transport</a></li>
+            <li><a href="products.html">Solar & Power Backup</a></li>
+            <li><a href="products.html">Electronics & Tech</a></li>
+            <li><a href="categories.html">All Categories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Trust & Support</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About TariAds</a></li>
+            <li><a href="about.html#trust">Trust Principles</a></li>
+            <li><a href="post-listing.html?type=property">List a Property</a></li>
+            <li><a href="saved.html">Saved Wishlist</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 TariAds. Global Listings & Property Marketplace.</div>
+        <div style="display:flex; gap:1.5rem;">
+          <a href="about.html">Privacy Policy</a>
+          <a href="about.html">Terms of Service</a>
+          <a href="about.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/properties.js"></script>
+</body>
+</html>

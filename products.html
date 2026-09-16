@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products & Goods — TariAds Marketplace</title>
+  <meta name="description" content="Discover solar inverters, lithium batteries, computing technology, furniture, and appliances on TariAds. Connect directly with authentic suppliers and sellers.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-icon-box">T</div>
+        <div class="brand-text">
+          <span class="brand-title">TARIADS</span>
+        </div>
+      </a>
+
+      <!-- Ecosystem Mode Switch: Marketplace ↔ Billboard -->
+      <div class="ecosystem-mode-switch" role="tablist" aria-label="TariAds Experience Mode">
+        <a href="index.html" class="mode-btn active" id="modeMarketplace" role="tab" aria-selected="true" title="TariAds Marketplace — Discover and List">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Marketplace</span>
+        </a>
+        <a href="https://billboard.usetariads.com" class="mode-btn" id="modeBillboard" role="tab" aria-selected="false" title="TariAds Billboard — Digital Advertising & Campaigns">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="3" rx="2"/>
+            <line x1="8" x2="16" y1="21" y2="21"/>
+            <line x1="12" x2="12" y1="17" y2="21"/>
+          </svg>
+          <span>Billboard</span>
+        </a>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="saved.html" class="saved-btn" id="headerSavedBtn" title="Saved Items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span class="saved-label">Saved</span>
+          <span class="badge-count saved-count-display" style="display:none;">0</span>
+        </a>
+
+        <a href="post-listing.html?type=product" class="btn btn-primary btn-sm header-post-btn" id="headerListBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="post-btn-text">Post Product</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobileNavDrawer">
+    <div class="drawer-mode-switch-container">
+      <div class="drawer-mode-label">TARIADS EXPERIENCE</div>
+      <div class="ecosystem-mode-switch mobile-drawer-switch">
+        <a href="index.html" class="mode-btn active">Marketplace</a>
+        <a href="https://billboard.usetariads.com" class="mode-btn">Billboard ↗</a>
+      </div>
+    </div>
+    <div class="drawer-links-group">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="properties.html" class="nav-link">Property</a>
+      <a href="vehicles.html" class="nav-link">Vehicles</a>
+      <a href="products.html" class="nav-link active">Products</a>
+      <a href="categories.html" class="nav-link">All Categories</a>
+      <a href="saved.html" class="nav-link">Saved Items</a>
+      <a href="about.html" class="nav-link">About & Safety</a>
+    </div>
+    <div class="drawer-footer-action">
+      <a href="post-listing.html?type=product" class="btn btn-primary" style="width:100%; text-align:center;">+ Post Product</a>
+    </div>
+  </div>
+
+  <!-- Hero Header -->
+  <section class="properties-hero-bar">
+    <div class="container">
+      <div style="max-width:720px;">
+        <div class="hero-pill" style="margin-bottom:0.5rem;">Products & Marketplace Goods</div>
+        <h1 style="font-size:2.25rem; font-weight:800; color:var(--text-main); margin-bottom:0.5rem;">
+          Equipment & <span>Goods</span>
+        </h1>
+        <p style="color:var(--text-muted); font-size:1.05rem;">
+          Shop high-value backup solar inverters, lithium battery packages, computers, handcrafted furniture, and household appliances with direct seller contact.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products Content -->
+  <main class="container" style="padding-top:2rem; padding-bottom:4rem;">
+    <!-- Filter Controls Bar -->
+    <div class="search-widget" style="padding:1.25rem; margin-bottom:2.5rem;">
+      <form id="productFilterForm" class="search-form-grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+        <!-- Search Keyword -->
+        <div class="search-field">
+          <label class="field-label" for="prdKeyword">Search Item</label>
+          <div class="field-input-wrapper">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#075E34" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="text" id="prdKeyword" class="field-input" placeholder="e.g. Solar, MacBook, Inverter..." />
+          </div>
+        </div>
+
+        <!-- Product Category -->
+        <div class="search-field">
+          <label class="field-label" for="prdCategory">Category</label>
+          <div class="field-input-wrapper">
+            <select id="prdCategory" class="field-select">
+              <option value="all">All Product Categories</option>
+              <option value="solar">Solar & Power Backup</option>
+              <option value="electronics">Electronics & Computing</option>
+              <option value="furniture">Furniture & Home</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Max Price -->
+        <div class="search-field">
+          <label class="field-label" for="prdMaxPrice">Max Budget (USD)</label>
+          <div class="field-input-wrapper">
+            <select id="prdMaxPrice" class="field-select">
+              <option value="">Any Budget</option>
+              <option value="500">Up to $500</option>
+              <option value="1000">Up to $1,000</option>
+              <option value="2000">Up to $2,000</option>
+              <option value="5000">Up to $5,000</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Action -->
+        <div class="search-action-col">
+          <button type="submit" class="btn btn-primary" style="width:100%; height:100%; min-height:44px;">
+            Filter Products
+          </button>
+        </div>
+      </form>
+    </div>
+
+    <!-- Results Header -->
+    <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+      <h2 id="productCountHeading" style="font-size:1.25rem; font-weight:700; color:var(--text-main);">
+        Available Products
+      </h2>
+      <a href="post-listing.html?type=product" class="btn btn-outline btn-sm">
+        + Post an Item
+      </a>
+    </div>
+
+    <!-- Products Grid -->
+    <div class="property-grid" id="productsListGrid">
+      <!-- Populated via script -->
+    </div>
+
+    <!-- Safe Trading Tips -->
+    <div style="margin-top:4rem; padding:2rem; background:#FFFFFF; border-radius:var(--radius-md); border:1px solid var(--border-subtle); box-shadow:var(--shadow-sm);">
+      <h3 style="font-size:1.15rem; font-weight:700; color:var(--primary); margin-bottom:0.75rem;">
+        Product Verification & Safe Buying Advice
+      </h3>
+      <p style="color:var(--text-muted); font-size:0.95rem; line-height:1.6;">
+        Verify electronic serial numbers, manufacturer warranty seals, and equipment specifications before finalizing payment. Meet in public or visit the supplier's store or showroom. Avoid pre-payment wire transfers to unverified accounts.
+      </p>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="brand-icon-box">T</div>
+            <div class="brand-text">
+              <span class="brand-title">TARIADS</span>
+              <span class="brand-subtitle">GLOBAL MARKETPLACE</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your marketplace to see more, find more, and grow more.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Marketplace</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html">Property (Flagship)</a></li>
+            <li><a href="vehicles.html">Vehicles & Transport</a></li>
+            <li><a href="products.html">Products & Goods</a></li>
+            <li><a href="categories.html">All Categories</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Actions</h4>
+          <ul class="footer-links">
+            <li><a href="post-listing.html">Post a Listing</a></li>
+            <li><a href="saved.html">Saved Wishlist</a></li>
+            <li><a href="about.html">About & Safety</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 TariAds. Global Listings Marketplace.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module">
+    import { TariData } from "./js/data.js";
+
+    document.addEventListener("DOMContentLoaded", function () {
+      const container = document.getElementById("productsListGrid");
+      const countEl = document.getElementById("productCountHeading");
+      const form = document.getElementById("productFilterForm");
+
+      function loadProducts() {
+        if (!window.TariData || !window.TariApp) return;
+
+        let list = window.TariData.getProducts();
+        const selectedCountry = window.TariData.getSelectedCountry();
+        if (selectedCountry && selectedCountry !== "ALL") {
+          const countryFiltered = list.filter(p => p.country === selectedCountry);
+          if (countryFiltered.length > 0) list = countryFiltered;
+        }
+
+        const keyword = document.getElementById("prdKeyword")?.value.toLowerCase().trim() || "";
+        const cat = document.getElementById("prdCategory")?.value || "all";
+        const maxPrice = parseFloat(document.getElementById("prdMaxPrice")?.value) || 0;
+
+        const filtered = list.filter(p => {
+          if (keyword && !p.title.toLowerCase().includes(keyword) && !p.description.toLowerCase().includes(keyword)) return false;
+          if (cat !== "all" && p.category !== cat) return false;
+          if (maxPrice > 0 && p.price > maxPrice) return false;
+          return true;
+        });
+
+        if (countEl) {
+          countEl.textContent = `${filtered.length} Product${filtered.length === 1 ? '' : 's'} Available`;
+        }
+
+        if (container) {
+          if (filtered.length === 0) {
+            container.innerHTML = `
+              <div style="grid-column:1/-1; text-align:center; padding:3rem 1rem; background:#FFF; border-radius:10px; border:1px solid #E2E8F0;">
+                <p style="font-size:1.1rem; font-weight:600; color:var(--text-main);">No products matching your current criteria</p>
+                <p style="color:var(--text-muted); margin:0.5rem 0 1.5rem;">Try adjusting your search keyword or budget.</p>
+                <button id="resetPrdFilters" class="btn btn-secondary btn-sm">Reset Filters</button>
+              </div>
+            `;
+            document.getElementById("resetPrdFilters")?.addEventListener("click", () => {
+              form.reset();
+              loadProducts();
+            });
+          } else {
+            container.innerHTML = filtered.map(p => window.TariApp.renderProductCard(p)).join("");
+          }
+        }
+      }
+
+      loadProducts();
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          loadProducts();
+        });
+      }
+
+      window.addEventListener("tariads:location-changed", loadProducts);
+    });
+  </script>
+</body>
+</html>
