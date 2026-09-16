@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TariAds — Global Listings & Property Marketplace</title>
+  <meta name="description" content="Your marketplace for listings, property, vehicles, and products. Discover listings and advertise what you have with property as our flagship vertical.">
+  <link rel="stylesheet" href="style.css">
+  <!-- Lucide Icons CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-icon-box">T</div>
+        <div class="brand-text">
+          <span class="brand-title">TARIADS</span>
+        </div>
+      </a>
+
+      <!-- Ecosystem Mode Switch: Marketplace ↔ Billboard -->
+      <div class="ecosystem-mode-switch" role="tablist" aria-label="TariAds Experience Mode">
+        <a href="index.html" class="mode-btn active" id="modeMarketplace" role="tab" aria-selected="true" title="TariAds Marketplace — Discover and List">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Marketplace</span>
+        </a>
+        <a href="https://billboard.usetariads.com" class="mode-btn" id="modeBillboard" role="tab" aria-selected="false" title="TariAds Billboard — Digital Advertising & Campaigns">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="3" rx="2"/>
+            <line x1="8" x2="16" y1="21" y2="21"/>
+            <line x1="12" x2="12" y1="17" y2="21"/>
+          </svg>
+          <span>Billboard</span>
+        </a>
+      </div>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="post-listing.html" class="btn btn-primary btn-sm header-post-btn" id="headerListBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="post-btn-text">Post Listing</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobileNavDrawer">
+    <div class="drawer-mode-switch-container">
+      <div class="drawer-mode-label">TARIADS EXPERIENCE</div>
+      <div class="ecosystem-mode-switch mobile-drawer-switch">
+        <a href="index.html" class="mode-btn active">Marketplace</a>
+        <a href="https://billboard.usetariads.com" class="mode-btn">Billboard ↗</a>
+      </div>
+    </div>
+    <div class="drawer-links-group">
+      <a href="index.html" class="nav-link active">Home</a>
+      <a href="discover.html" class="nav-link">Discover</a>
+      <a href="categories.html" class="nav-link">Categories</a>
+      <a href="properties.html" class="nav-link">Property</a>
+      <a href="vehicles.html" class="nav-link">Vehicles</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="saved.html" class="nav-link">Saved</a>
+      <a href="about.html" class="nav-link">About & Safety</a>
+    </div>
+    <div class="drawer-footer-action">
+      <a href="post-listing.html" class="btn btn-primary" style="width:100%; text-align:center;">+ Post a Listing</a>
+    </div>
+  </div>
+
+  <!-- Persistent Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
+    <a href="index.html" class="bottom-nav-item active" id="bnavHome">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="discover.html" class="bottom-nav-item" id="bnavDiscover">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      <span>Discover</span>
+    </a>
+    <a href="categories.html" class="bottom-nav-item" id="bnavCategories">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="7" height="7" x="3" y="3" rx="1"/>
+        <rect width="7" height="7" x="14" y="3" rx="1"/>
+        <rect width="7" height="7" x="14" y="14" rx="1"/>
+        <rect width="7" height="7" x="3" y="14" rx="1"/>
+      </svg>
+      <span>Categories</span>
+    </a>
+    <a href="saved.html" class="bottom-nav-item" id="bnavSaved">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+      </svg>
+      <span>Saved</span>
+      <span class="badge-count saved-count-display bnav-badge" style="display:none;">0</span>
+    </a>
+    <a href="post-listing.html" class="bottom-nav-item bnav-post-highlight" id="bnavPost">
+      <div class="bnav-post-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </div>
+      <span>Post</span>
+    </a>
+  </nav>
+
+  <!-- Top Discovery Feed Header & Search -->
+  <section class="home-hero-clean" id="feedHeaderSection" style="padding-top:2.25rem; padding-bottom:1.25rem;">
+    <div class="container">
+      <div class="hero-brand-headline" style="margin-bottom:1.25rem;">
+        <h1 class="hero-headline-title">DISCOVER WHAT'S OUT THERE.</h1>
+      </div>
+
+      <!-- ONE Clean Global Search Bar -->
+      <div class="global-search-bar-wrap" style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:12px; padding:0.6rem 0.85rem; box-shadow:0 2px 8px rgba(0,0,0,0.04); display:flex; align-items:center; gap:0.75rem;">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="feedSearchInput" placeholder="Search properties, vehicles, products, businesses..." style="border:none; outline:none; width:100%; font-size:0.95rem; color:#0F172A; background:transparent;">
+        <div style="display:flex; align-items:center; border-left:1px solid #E2E8F0; padding-left:0.6rem; white-space:nowrap;">
+          <button type="button" id="openLocationSheetBtn" class="marketplace-location-control" aria-haspopup="dialog" aria-expanded="false" aria-label="Current location: Harare. Tap to choose location.">
+            <span class="location-control-pin" aria-hidden="true">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+                <circle cx="12" cy="10" r="3"/>
+              </svg>
+            </span>
+            <span class="location-control-text" id="currentLocationText">Harare</span>
+            <svg class="location-control-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m6 9 6 6 6-6"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Marketplace Discovery Feed Section -->
+  <main class="container section" style="padding-top:0.75rem; padding-bottom:3.5rem;">
+    <!-- Discovery Feed Context Bar -->
+    <div class="discovery-context-bar" id="discoveryContextBar">
+      <div class="discovery-context-left">
+        <span>Discovering in</span>
+        <button type="button" class="discovery-city-badge" id="discoveryCityPill" aria-label="Active location. Tap to change.">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/>
+            <circle cx="12" cy="10" r="3"/>
+          </svg>
+          <span id="discoveryCityPillText">Harare</span>
+        </button>
+      </div>
+      <button type="button" class="discovery-location-change-link" id="changeLocationQuickBtn">
+        Change location
+      </button>
+    </div>
+
+    <!-- Feed Grid Container (Unified Feed) -->
+    <div class="discovery-feed-grid" id="discoveryFeedContainer">
+      <!-- Injected by js/home.js -->
+    </div>
+  </main>
+
+  <!-- Direct, Quiet Post Banner -->
+  <section class="container" style="margin-top: 1.5rem; margin-bottom: 3.5rem;">
+    <div class="compact-post-banner">
+      <div class="compact-post-text">
+        <h3>Advertise what you have.</h3>
+        <p>Reach verified buyers, tenants, and clients with direct WhatsApp inquiries.</p>
+      </div>
+      <div class="compact-post-actions">
+        <a href="post-listing.html" class="btn btn-accent btn-md">Post a Listing</a>
+        <a href="categories.html" class="btn btn-outline btn-md" style="color:#FFF; border-color:rgba(255,255,255,0.4);">All Categories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="mainFooter">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="brand-icon-box">T</div>
+            <div class="brand-text">
+              <span class="brand-title">TARIADS</span>
+              <span class="brand-subtitle">GLOBAL MARKETPLACE</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your marketplace to see more, find more, and grow more. Discover listings or advertise your property, vehicle, or products worldwide.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Property</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?category=rent">Houses & Flats for Rent</a></li>
+            <li><a href="properties.html?category=sale">Houses for Sale</a></li>
+            <li><a href="properties.html?category=commercial">Commercial Spaces</a></li>
+            <li><a href="properties.html?category=rooms">Rooms & Cottages</a></li>
+            <li><a href="properties.html?category=student">Student Accommodation</a></li>
+            <li><a href="properties.html?category=holiday">Holiday & Short-Stay</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Other Categories</h4>
+          <ul class="footer-links">
+            <li><a href="vehicles.html">Vehicles & Transport</a></li>
+            <li><a href="products.html">Solar & Power Backup</a></li>
+            <li><a href="products.html">Electronics & Tech</a></li>
+            <li><a href="products.html">Furniture & Living</a></li>
+            <li><a href="categories.html">All Marketplace Categories</a></li>
+            <li><a href="post-listing.html">Post Your Listing</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Safety & Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About TariAds</a></li>
+            <li><a href="about.html#trust">Trust Principles</a></li>
+            <li><a href="saved.html">Saved Wishlist & Viewings</a></li>
+            <li><a href="post-listing.html">Seller Advertising Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TariAds. All rights reserved. Global Listings & Property Marketplace.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">Privacy</a>
+          <a href="about.html">Terms of Service</a>
+          <a href="about.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- TariAds Premium Location Sheet Modal -->
+  <div class="location-sheet-backdrop" id="tariLocationSheetModal" role="dialog" aria-modal="true" aria-labelledby="locationSheetTitle" aria-hidden="true">
+    <div class="location-sheet-card">
+      <!-- Mobile Drag Handle Bar -->
+      <div class="sheet-drag-handle-bar" aria-hidden="true">
+        <div class="sheet-drag-pill"></div>
+      </div>
+
+      <!-- Sheet Header -->
+      <div class="location-sheet-header">
+        <div class="location-sheet-header-text">
+          <h2 id="locationSheetTitle" class="location-sheet-title">Choose your location</h2>
+          <p class="location-sheet-subtitle">Find listings around you.</p>
+        </div>
+        <button type="button" class="location-sheet-close-btn" id="locationSheetCloseBtn" aria-label="Close location selector">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 6 6 18M6 6l12 12"/>
+          </svg>
+        </button>
+      </div>
+
+      <!-- Sheet Body -->
+      <div class="location-sheet-body">
+        <!-- Current Location Banner -->
+        <div class="location-current-banner" id="locationCurrentBanner">
+          <div class="location-current-header">
+            <span class="location-current-eyebrow">
+              <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="#075E34" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              Current location
+            </span>
+            <span class="location-active-badge">
+              <span class="location-active-dot"></span>
+              Active
+            </span>
+          </div>
+          <div class="location-current-main">
+            <div class="location-current-city" id="sheetCurrentCityDisplay">Harare</div>
+            <div class="location-current-desc" id="sheetCurrentSubDisplay">Current location / default market</div>
+          </div>
+        </div>
+
+        <!-- Instant Search Field -->
+        <div class="location-search-wrap">
+          <div class="location-search-icon" aria-hidden="true">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+          </div>
+          <input
+            type="text"
+            id="locationSearchInput"
+            class="location-search-input"
+            placeholder="Search Harare, Mutare, Borrowdale..."
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Search city or area"
+          />
+          <button type="button" id="locationSearchClearBtn" class="location-search-clear" aria-label="Clear search query" style="display:none;">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+          </button>
+        </div>
+
+        <!-- Live Search Results Container (Populated via JS when typing) -->
+        <div class="location-section" id="locationSearchResultsSection" style="display:none;">
+          <div class="location-section-label">SEARCH RESULTS</div>
+          <div class="location-items-list" id="locationSearchResultsList">
+            <!-- Injected by searchLocations() -->
+          </div>
+        </div>
+
+        <!-- Default Organized Location Sections -->
+        <div id="locationDefaultSections">
+          <!-- POPULAR LOCATIONS Section -->
+          <div class="location-section" style="margin-bottom: 0.85rem;">
+            <div class="location-section-label">POPULAR LOCATIONS</div>
+            <div class="location-items-list" id="popularLocationsList">
+              <!-- Rendered via JS -->
+            </div>
+          </div>
+
+          <!-- ALL LOCATIONS Section -->
+          <div class="location-section">
+            <div class="location-section-label">ALL LOCATIONS</div>
+            <div class="location-items-list">
+              <!-- All Zimbabwe item -->
+              <button type="button" class="location-item-btn" data-city="All Zimbabwe" data-country="ZW" data-type="country">
+                <div class="location-item-left">
+                  <div class="location-item-icon-box">🇿🇼</div>
+                  <div class="location-item-info">
+                    <div class="location-item-name-row">
+                      <span class="location-item-name">All Zimbabwe</span>
+                    </div>
+                    <span class="location-item-tag">All cities, towns & provinces</span>
+                  </div>
+                </div>
+                <div class="location-item-status" data-status-city="All Zimbabwe"></div>
+              </button>
+
+              <!-- International / Global Markets Collapsible (Preserves Global Architecture) -->
+              <div style="margin-top: 0.25rem;">
+                <button type="button" class="location-item-btn location-intl-toggle" id="locationIntlToggleBtn" aria-expanded="false">
+                  <div class="location-item-left">
+                    <div class="location-item-icon-box">🌐</div>
+                    <div class="location-item-info">
+                      <div class="location-item-name-row">
+                        <span class="location-item-name">Global & Regional Markets</span>
+                        <span class="location-item-badge">Expand</span>
+                      </div>
+                      <span class="location-item-tag">South Africa, UK, Botswana, Zambia, USA</span>
+                    </div>
+                  </div>
+                  <svg class="location-intl-caret" id="locationIntlCaret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+                </button>
+                <div class="location-intl-dropdown" id="locationIntlDropdown" style="display:none;">
+                  <button type="button" class="location-item-btn" data-city="South Africa" data-country="ZA" data-type="country">
+                    <div class="location-item-left">
+                      <div class="location-item-icon-box">🇿🇦</div>
+                      <div class="location-item-info">
+                        <div class="location-item-name-row"><span class="location-item-name">South Africa</span></div>
+                        <span class="location-item-tag">Cape Town, Johannesburg, Durban</span>
+                      </div>
+                    </div>
+                    <div class="location-item-status" data-status-city="South Africa"></div>
+                  </button>
+                  <button type="button" class="location-item-btn" data-city="Botswana" data-country="BW" data-type="country">
+                    <div class="location-item-left">
+                      <div class="location-item-icon-box">🇧🇼</div>
+                      <div class="location-item-info">
+                        <div class="location-item-name-row"><span class="location-item-name">Botswana</span></div>
+                        <span class="location-item-tag">Gaborone, Francistown</span>
+                      </div>
+                    </div>
+                    <div class="location-item-status" data-status-city="Botswana"></div>
+                  </button>
+                  <button type="button" class="location-item-btn" data-city="Zambia" data-country="ZM" data-type="country">
+                    <div class="location-item-left">
+                      <div class="location-item-icon-box">🇿🇲</div>
+                      <div class="location-item-info">
+                        <div class="location-item-name-row"><span class="location-item-name">Zambia</span></div>
+                        <span class="location-item-tag">Lusaka, Ndola, Livingstone</span>
+                      </div>
+                    </div>
+                    <div class="location-item-status" data-status-city="Zambia"></div>
+                  </button>
+                  <button type="button" class="location-item-btn" data-city="United Kingdom" data-country="UK" data-type="country">
+                    <div class="location-item-left">
+                      <div class="location-item-icon-box">🇬🇧</div>
+                      <div class="location-item-info">
+                        <div class="location-item-name-row"><span class="location-item-name">United Kingdom</span></div>
+                        <span class="location-item-tag">London, Manchester, Diaspora</span>
+                      </div>
+                    </div>
+                    <div class="location-item-status" data-status-city="United Kingdom"></div>
+                  </button>
+                  <button type="button" class="location-item-btn" data-city="All Locations (Global)" data-country="ALL" data-type="all">
+                    <div class="location-item-left">
+                      <div class="location-item-icon-box">🌍</div>
+                      <div class="location-item-info">
+                        <div class="location-item-name-row"><span class="location-item-name">All Locations (Global)</span></div>
+                        <span class="location-item-tag">Worldwide listings across all regions</span>
+                      </div>
+                    </div>
+                    <div class="location-item-status" data-status-city="All Locations (Global)"></div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/home.js"></script>
+</body>
+</html>

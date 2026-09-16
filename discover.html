@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Discover — TariAds Global Marketplace</title>
+  <meta name="description" content="Explore and discover verified listings by category, location, property type, and curated discovery signals worldwide.">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" id="mainHeader">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" id="brandLogo">
+        <div class="brand-icon-box">T</div>
+        <div class="brand-text">
+          <span class="brand-title">TARIADS</span>
+        </div>
+      </a>
+
+      <!-- Ecosystem Mode Switch: Marketplace ↔ Billboard -->
+      <div class="ecosystem-mode-switch" role="tablist" aria-label="TariAds Experience Mode">
+        <a href="index.html" class="mode-btn active" id="modeMarketplace" role="tab" aria-selected="true" title="TariAds Marketplace — Discover and List">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+            <polyline points="9 22 9 12 15 12 15 22"/>
+          </svg>
+          <span>Marketplace</span>
+        </a>
+        <a href="https://billboard.usetariads.com" class="mode-btn" id="modeBillboard" role="tab" aria-selected="false" title="TariAds Billboard — Digital Advertising & Campaigns">
+          <svg class="mode-icon" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="14" x="2" y="3" rx="2"/>
+            <line x1="8" x2="16" y1="21" y2="21"/>
+            <line x1="12" x2="12" y1="17" y2="21"/>
+          </svg>
+          <span>Billboard</span>
+        </a>
+      </div>
+
+      <!-- Desktop Icon Navigation -->
+      <nav class="desktop-icon-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-item" title="Marketplace Feed">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+          <span>Home</span>
+        </a>
+        <a href="discover.html" class="nav-item active" title="Explore by Category & Location">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+          <span>Discover</span>
+        </a>
+        <a href="categories.html" class="nav-item" title="Browse Marketplace Categories">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+          <span>Categories</span>
+        </a>
+        <a href="saved.html" class="nav-item" title="Saved Items">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+          <span>Saved</span>
+          <span class="badge-count saved-count-display" style="display:none;">0</span>
+        </a>
+      </nav>
+
+      <!-- Header Actions -->
+      <div class="header-actions">
+        <a href="post-listing.html" class="btn btn-primary btn-sm header-post-btn" id="headerListBtn">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+          <span class="post-btn-text">Post Listing</span>
+        </a>
+
+        <button class="mobile-menu-btn" id="mobileMenuToggle" aria-label="Toggle Navigation Menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-menu-drawer" id="mobileNavDrawer">
+    <div class="drawer-mode-switch-container">
+      <div class="drawer-mode-label">TARIADS EXPERIENCE</div>
+      <div class="ecosystem-mode-switch mobile-drawer-switch">
+        <a href="index.html" class="mode-btn">Marketplace</a>
+        <a href="https://billboard.usetariads.com" class="mode-btn">Billboard ↗</a>
+      </div>
+    </div>
+    <div class="drawer-links-group">
+      <a href="index.html" class="nav-link">Home Feed</a>
+      <a href="discover.html" class="nav-link active">Discover Experience</a>
+      <a href="properties.html" class="nav-link">Property</a>
+      <a href="vehicles.html" class="nav-link">Vehicles</a>
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="categories.html" class="nav-link">All Categories</a>
+      <a href="saved.html" class="nav-link">Saved Items</a>
+      <a href="about.html" class="nav-link">About & Safety</a>
+    </div>
+    <div class="drawer-footer-action">
+      <a href="post-listing.html" class="btn btn-primary" style="width:100%; text-align:center;">+ Post a Listing</a>
+    </div>
+  </div>
+
+  <!-- Persistent Mobile Bottom Navigation Bar -->
+  <nav class="mobile-bottom-nav" aria-label="Mobile Bottom Navigation">
+    <a href="index.html" class="bottom-nav-item" id="bnavHome">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+        <polyline points="9 22 9 12 15 12 15 22"/>
+      </svg>
+      <span>Home</span>
+    </a>
+    <a href="discover.html" class="bottom-nav-item active" id="bnavDiscover">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"/>
+        <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/>
+      </svg>
+      <span>Discover</span>
+    </a>
+    <a href="categories.html" class="bottom-nav-item" id="bnavCategories">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <rect width="7" height="7" x="3" y="3" rx="1"/>
+        <rect width="7" height="7" x="14" y="3" rx="1"/>
+        <rect width="7" height="7" x="14" y="14" rx="1"/>
+        <rect width="7" height="7" x="3" y="14" rx="1"/>
+      </svg>
+      <span>Categories</span>
+    </a>
+    <a href="saved.html" class="bottom-nav-item" id="bnavSaved">
+      <svg class="bnav-icon" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/>
+      </svg>
+      <span>Saved</span>
+      <span class="badge-count saved-count-display bnav-badge" style="display:none;">0</span>
+    </a>
+    <a href="post-listing.html" class="bottom-nav-item bnav-post-highlight" id="bnavPost">
+      <div class="bnav-post-icon">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 5v14M5 12h14"/>
+        </svg>
+      </div>
+      <span>Post</span>
+    </a>
+  </nav>
+
+  <!-- Discover Exploration Header -->
+  <section style="background:#FFFFFF; border-bottom:1px solid #E2E8F0; padding:2rem 0 1.5rem;">
+    <div class="container">
+      <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; margin-bottom:1rem;">
+        <div>
+          <span style="font-size:0.75rem; font-weight:700; text-transform:uppercase; letter-spacing:0.05em; color:var(--primary); background:#EBF7F0; padding:3px 8px; border-radius:4px;">Marketplace Exploration</span>
+          <h1 style="font-size:1.85rem; font-weight:800; color:#0F172A; margin-top:0.4rem; letter-spacing:-0.01em;">Discover Opportunities</h1>
+        </div>
+        <div style="display:flex; align-items:center; gap:0.5rem;">
+          <span style="font-size:0.85rem; color:#64748B; font-weight:600;" id="discoverMatchCount">Loading items...</span>
+        </div>
+      </div>
+
+      <!-- Live Search Box -->
+      <div style="background:#F8FAFC; border:1px solid #CBD5E1; border-radius:10px; padding:0.5rem 0.85rem; display:flex; align-items:center; gap:0.65rem; margin-bottom:1.25rem;">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#64748B" stroke-width="2.2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+        <input type="text" id="discoverSearchInput" placeholder="Explore by title, location, agent, agency, or feature..." style="border:none; outline:none; background:transparent; width:100%; font-size:0.95rem; color:#0F172A;">
+        <button type="button" id="clearDiscoverSearch" style="background:none; border:none; color:#94A3B8; cursor:pointer; display:none; padding:0;">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+
+      <!-- Exploration By Category Pills -->
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:0.75rem; font-weight:700; color:#64748B; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.04em;">Category</div>
+        <div class="feed-filter-bar" style="padding:0; margin-bottom:0;" role="tablist">
+          <button type="button" class="feed-filter-chip active discover-cat-chip" data-category="all">
+            <span>⚡</span> All
+          </button>
+          <button type="button" class="feed-filter-chip discover-cat-chip" data-category="property">
+            <span>🏠</span> Property
+          </button>
+          <button type="button" class="feed-filter-chip discover-cat-chip" data-category="vehicles">
+            <span>🚗</span> Vehicles
+          </button>
+          <button type="button" class="feed-filter-chip discover-cat-chip" data-category="products">
+            <span>📦</span> Products & Equipment
+          </button>
+        </div>
+      </div>
+
+      <!-- Exploration By Location Pills -->
+      <div style="margin-bottom:1rem;">
+        <div style="font-size:0.75rem; font-weight:700; color:#64748B; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.04em;">Location & Hubs</div>
+        <div class="feed-filter-bar" style="padding:0; margin-bottom:0;" role="tablist">
+          <button type="button" class="feed-filter-chip active discover-loc-chip" data-loc="all">
+            <span>🌍</span> All Regions
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="Harare">
+            Harare
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="Bulawayo">
+            Bulawayo
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="Cape Town">
+            Cape Town
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="Johannesburg">
+            Johannesburg
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="Gaborone">
+            Gaborone
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="Lusaka">
+            Lusaka
+          </button>
+          <button type="button" class="feed-filter-chip discover-loc-chip" data-loc="London">
+            London
+          </button>
+        </div>
+      </div>
+
+      <!-- Curated Discovery Signals / Popular Searches -->
+      <div>
+        <div style="font-size:0.75rem; font-weight:700; color:#64748B; text-transform:uppercase; margin-bottom:0.4rem; letter-spacing:0.04em;">Curated Signals & Opportunities</div>
+        <div class="feed-filter-bar" style="padding:0; margin-bottom:0;" role="tablist">
+          <button type="button" class="feed-filter-chip discover-signal-chip" data-signal="verified">
+            <span>🛡</span> Verified Listers Only
+          </button>
+          <button type="button" class="feed-filter-chip discover-signal-chip" data-signal="under600">
+            <span>💰</span> Rentals under $600/mo
+          </button>
+          <button type="button" class="feed-filter-chip discover-signal-chip" data-signal="solar">
+            <span>☀️</span> Solar & Backup Power
+          </button>
+          <button type="button" class="feed-filter-chip discover-signal-chip" data-signal="automotive">
+            <span>🚙</span> Clean Cars under $15,000
+          </button>
+          <button type="button" class="feed-filter-chip discover-signal-chip" data-signal="commercial">
+            <span>🏢</span> Commercial & Office
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Discover Results Feed -->
+  <main class="container section" style="padding-top:1.5rem; padding-bottom:4rem;">
+    <div class="discovery-feed-grid" id="discoverFeedGrid">
+      <!-- Injected by js/discover.js -->
+    </div>
+  </main>
+
+  <!-- Quiet, Compact Post CTA -->
+  <section class="container" style="margin-bottom: 3.5rem;">
+    <div class="compact-post-banner">
+      <div class="compact-post-text">
+        <h3>Advertise what you have.</h3>
+        <p>Connect directly with prospective buyers, tenants, and clients worldwide via direct WhatsApp chat.</p>
+      </div>
+      <div class="compact-post-actions">
+        <a href="post-listing.html" class="btn btn-accent btn-md">+ Post Listing</a>
+        <a href="categories.html" class="btn btn-outline btn-md" style="color:#FFF; border-color:rgba(255,255,255,0.4);">All Categories</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="mainFooter">
+    <div class="container footer-inner">
+      <div class="footer-grid">
+        <div class="footer-col brand-col">
+          <a href="index.html" class="brand-logo footer-logo">
+            <div class="brand-icon-box">T</div>
+            <div class="brand-text">
+              <span class="brand-title">TARIADS</span>
+              <span class="brand-subtitle">GLOBAL MARKETPLACE</span>
+            </div>
+          </a>
+          <p class="footer-tagline">
+            Your marketplace to see more, find more, and grow more. Discover listings or advertise your property, vehicle, or products worldwide.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Property</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?category=rent">Houses & Flats for Rent</a></li>
+            <li><a href="properties.html?category=sale">Houses for Sale</a></li>
+            <li><a href="properties.html?category=commercial">Commercial Spaces</a></li>
+            <li><a href="properties.html?category=rooms">Rooms & Cottages</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Other Categories</h4>
+          <ul class="footer-links">
+            <li><a href="vehicles.html">Vehicles & Transport</a></li>
+            <li><a href="products.html">Solar & Power Backup</a></li>
+            <li><a href="products.html">Electronics & Tech</a></li>
+            <li><a href="categories.html">All Marketplace Categories</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Safety & Company</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">About TariAds</a></li>
+            <li><a href="about.html#trust">Trust Principles</a></li>
+            <li><a href="saved.html">Saved Wishlist & Viewings</a></li>
+            <li><a href="post-listing.html">Seller Advertising Guidelines</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 TariAds. All rights reserved. Global Listings & Property Marketplace.</p>
+        <div class="footer-bottom-links">
+          <a href="about.html">Privacy</a>
+          <a href="about.html">Terms of Service</a>
+          <a href="about.html">Safety Guidelines</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="js/data.js"></script>
+  <script type="module" src="js/app.js"></script>
+  <script type="module" src="js/discover.js"></script>
+</body>
+</html>
